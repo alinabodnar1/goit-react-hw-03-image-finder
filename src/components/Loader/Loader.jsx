@@ -8,8 +8,8 @@ const override = {
 };
 
 function App() {
-  let [loading, setLoading] = useState(true);
-  let [color, setColor] = useState("#ffffff");
+  let [loading] = useState(true);
+  let [color] = useState("#ffffff");
 
   return (
       <ClipLoader

@@ -68,7 +68,7 @@ export default class ImageGallery extends Component {
 			<>
                 {isLoading &&
                     <div style={{marginLeft: "10px"}}>
-                        <p style={{color: "red"}}>Loading...</p>
+                        <p style={{color: "green"}}>Loading...</p>
                         <Loader />
                     </div>
                     }
