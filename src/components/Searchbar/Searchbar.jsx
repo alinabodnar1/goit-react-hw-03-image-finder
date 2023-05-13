@@ -2,19 +2,17 @@ import React, { Component } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+import SearchIcon from '@mui/icons-material/Search';
 
 export default class Searchbar extends Component {
     state = {
         search: ''
     }
-
-    // Відповідає за оновлення стану
-
+    
     handleChange = (evt) => { 
         this.setState({ search: evt.currentTarget.value.toLowerCase() }); 
 	}
-    
-  // Викликається під час відправлення форми
+
     handleSubmit = (evt) => {
         evt.preventDefault();
         this.props.handleSearch(this.state.search);  
@@ -36,7 +34,9 @@ export default class Searchbar extends Component {
 					value={this.state.search}/>
                 <Button
                     type="submit"
-                    variant="contained">Search</Button>
+                    variant="contained">
+                    <SearchIcon />
+                </Button>
             </Stack>
         </form>
     )

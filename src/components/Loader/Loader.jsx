@@ -1,6 +1,6 @@
 import { useState, CSSProperties } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
-// CSSProperties =
+
 const override = {
     display: "block",
     margin: "0 auto",
@@ -24,5 +24,3 @@ function App() {
 }
 
 export default App;
-
-// export default Loader;
