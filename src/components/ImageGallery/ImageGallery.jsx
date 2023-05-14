@@ -4,6 +4,7 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import Loader from '../Loader/Loader';
 import LoadMore from 'components/LoadMore/LoadMore';
+import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -75,15 +76,11 @@ export default class ImageGallery extends Component {
                 
                 {pictures?.length > 0 && (
                     <>
-                    <ImageList sx={{ width: "100vw", height: "100vh" }} cols={3} rowHeight={400}>
+                    <ImageList sx={{ width: "100vw", height: "100vh" }} cols={3} >
                         {pictures.map((picture) => (
                             <ImageListItem
                                 key={picture.id}>
-                                <img
-                                    src={`${picture.webformatURL}?w=164&h=164&fit=crop&auto=format`}
-                                    alt={picture.title}
-                                    loading="lazy"
-                                />
+                                <ImageGalleryItem picture={ picture} />
                             </ImageListItem>
                         ))}
                     </ImageList>

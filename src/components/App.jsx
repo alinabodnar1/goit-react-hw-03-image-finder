@@ -6,17 +6,10 @@ import Modal from 'components/Modal/Modal';
 export default class App extends Component {
   state = {
     searchText: '',
-    showModal: false
   }
   
   handleSearch = (searchText) => {
     this.setState({ searchText });
-	}
-  
-  toggleModal = () => {
-    this.setState(({showModal}) => ({
-      showModal: !showModal
-    }))
   }
 
   render() {
@@ -24,11 +17,7 @@ export default class App extends Component {
     return (
       <div>
         <Searchbar handleSearch={this.handleSearch} />
-        <ImageGallery searchText={searchText} showModal={this.toggleModal} />
-
-        {showModal && (<Modal onClose={this.toggleModal}> Body of modal
-        
-        </Modal>)}
+        <ImageGallery searchText={searchText} />
        
       </div>
     )
