@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
+import PropTypes from 'prop-types';
 
 export default class App extends Component {
   state = {
@@ -16,10 +17,11 @@ export default class App extends Component {
     return (
       <div>
         <Searchbar handleSearch={this.handleSearch} />
-        <ImageGallery searchText={searchText} />
-       
+        <ImageGallery searchText={searchText} /> 
       </div>
     )
   }
 }
-
+App.propTypes = {
+  searchText: PropTypes.string,
+}

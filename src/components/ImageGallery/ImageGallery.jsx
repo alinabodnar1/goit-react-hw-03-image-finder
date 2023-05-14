@@ -8,6 +8,7 @@ import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 import cssModule from './ImageGallery.module.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PropTypes from 'prop-types';
 
 export default class ImageGallery extends Component {
     state = {
@@ -102,4 +103,9 @@ export default class ImageGallery extends Component {
 			</>
 		)
 	}
+}
+
+ImageGallery.propTypes = {
+    pictures: PropTypes.array,
+    isLoading: PropTypes.func,
 }

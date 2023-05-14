@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'components/Modal/Modal';
 import cssModule from './ImageGalleryItem.module.css';
+import PropTypes from 'prop-types';
 
 export default class ImageGalleryItem extends Component {
      state = {
@@ -18,7 +19,7 @@ export default class ImageGalleryItem extends Component {
         return (
             <>
                 <img className={cssModule['small-image']}
-                    src={`${picture.webformatURL}`}
+                    src={picture.webformatURL}
                     alt={picture.title}
                     loading="lazy"
                     onClick={this.toggleModal}
@@ -35,4 +36,10 @@ export default class ImageGalleryItem extends Component {
             </>
     )
   }
+} ImageGalleryItem.propTypes = {
+    picture: PropTypes.shape({
+        src: PropTypes.string,
+        alt: PropTypes.string,
+    }),
+    showModal: PropTypes.func,
 }
