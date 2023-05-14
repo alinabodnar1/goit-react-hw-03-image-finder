@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'components/Modal/Modal';
+import cssModule from './ImageGalleryItem.module.css';
 
 export default class ImageGalleryItem extends Component {
      state = {
@@ -16,13 +17,12 @@ export default class ImageGalleryItem extends Component {
         const { showModal } = this.state;
         return (
             <>
-                <img
-                    src={`${picture.webformatURL}?w=164&h=164&fit=crop&auto=format`}
+                <img className={cssModule['small-image']}
+                    src={`${picture.webformatURL}`}
                     alt={picture.title}
                     loading="lazy"
                     onClick={this.toggleModal}
-                    width="500"
-                    height="300"
+                    width="400"
                 />
                 {showModal &&
                     (<Modal onClose={this.toggleModal}> 
@@ -30,7 +30,7 @@ export default class ImageGalleryItem extends Component {
                             src={picture.largeImageURL}
                             alt={picture.title}
                             width="800"
-                            height="600"/>
+                        />
                     </Modal>)}
             </>
     )
