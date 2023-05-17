@@ -26,7 +26,7 @@ export default class Searchbar extends Component {
   render() {
     return (
         <form onSubmit={this.handleSubmit}
-              style={{ marginLeft: "500px", marginTop: "15px" }}>
+              style={{ marginLeft: "600px", marginTop: "15px" }}>
             <Stack spacing={2} direction="row">
                 <TextField
                     label="Enter word"
