@@ -1,24 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Button from '@mui/material/Button';
 import cssModule from './LoadMore.module.css';
 import PropTypes from 'prop-types';
 
-export default class LoadMore extends Component {
-    render() {
-        const { loadMore } = this.props;
+export default function LoadMore ({onClick}) {
         return (
             <div className={cssModule.container}>
                  <Button 
                     variant="contained"
                     type="submit"
-                    onClick={loadMore}
+                    onClick={onClick}
                 > Load more
             </Button >
             </div>
            
         )
     }
-}
+
 LoadMore.propTypes = {
-    loadMore: PropTypes.func.isRequired,
+    loadMore: PropTypes.func,
 }
